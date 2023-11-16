@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Sign Up</title>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="../CSS/signup.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script>
         function validateForm() {
@@ -27,12 +27,12 @@
     <section class="container forms">
         <div class="form sign up">
             <!-- Logo-->
-            <img src="IS-436-Foosball-Project\retriever.png">
+            <img src="../assests/images/retriever.png"/>
             <p id="tagline">Retriever</p>
             <header>Create an account</header>
 
             <!-- Form -->
-            <form method="post" action="signup.php" name="signupForm" onsubmit="return validateForm()">
+            <form method="post" action="../PHP/signup.php" name="signupForm" onsubmit="return validateForm()">
                 <input type="text" id="fname" name="fname" placeholder="First name">
                 <input type="text" id="lname" name="lname" placeholder="Last name">
                 <input type="text" id="email" name="email" placeholder="Email address">

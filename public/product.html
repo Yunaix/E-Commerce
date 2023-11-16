@@ -3,7 +3,7 @@
 <head>
 	<title>List a New Product</title>
 	<link rel="stylesheet" href="listproductstyle.css">
-    <link rel="stylesheet" href="landingpg.css">
+    <link rel="stylesheet" href="../CSS/landingpg.css">
 
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -11,9 +11,9 @@
     <header>
         <nav>
           <ul>
-            <li><a href="landingpg.php" onclick="location.href='landingpg.php'">Home</a></li>
-            <li><a href="product.html" onclick="location.href='product.html'">List a Product</a></li>
-            <li><a href="viewproducts.php" onclick="location.href='viewproducts.php'">Product View</a></li>
+            <li><a href="../PHP/landingpg.php" onclick="location.href='landingpg.php'">Home</a></li>
+            <li><a href="./product.html" onclick="location.href='product.html'">List a Product</a></li>
+            <li><a href="../PHP/viewproducts.php" onclick="location.href='viewproducts.php'">Product View</a></li>
           </ul>
         </nav>
       </header>
@@ -21,7 +21,7 @@
 		<div class="form sign up">
 			<p id="tagline">Retriever</p>
 			<h2>List a New Product for Sale</h2> 
-            <form method="post" action="product.php">
+            <form method="post" action="../PHP/product.php">
             <label for="name">Product Name:</label>
             <input type="text" id="name" name="name" placeholder="Product Name"><br>
             <label for="description">Product Description:</label>
