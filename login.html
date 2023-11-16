@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="./public/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="google-signin-client_id" content="452465441402-sttkqr0m42tgno27l1smnf909thi3qps.apps.googleusercontent.com">
+</head>
+<body>
+<section class="container forms">
+    <div class="form login">
+        <div class="form-content">
+            <p id="tagline">Retriever</p>
+            <br>
+
+            <header>Login</header>
+
+            <form method="post" action="./public/login.php">
+                <div class="field input-field">
+                    <input type="email" name="email" placeholder="Email address" class="input">
+                </div>
+    
+                <div class="field input-field">
+                    <input type="password" name="password" placeholder="Password" class="password">
+                </div>
+    
+                <div class="form-link">
+                    <a href="#" class="forgot-pass">Forgot Password?</a>
+                </div>
+    
+                <p class="field button-field"><input type="submit" name="commit" value="Login"><a href="./public/landingpg.php"></a></p>
+            </form>
+    
+            <div class="form-link">
+                <span>Don't have an account? <a href="./public/signup.html" class="signup-link">Sign Up</a></span>
+            </div>
+        </div>
+    
+        <!-- Login with Google-->
+        <div class="line"></div>
+        <div class="media options">
+            <a href="#" class="field google" onclick="startGoogleSignIn()">
+                <img src="./assests/images/google.png" alt="" class="google-img">
+                <span>Login with Google</span>
+            </a>
+        </div>
+    </div>
+    
+</section>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<script>
+    function startGoogleSignIn() {
+        gapi.load('auth2', function () {
+            gapi.auth2.init({
+                client_id: '452465441402-sttkqr0m42tgno27l1smnf909thi3qps.apps.googleusercontent.com',
+                scope: 'profile email',
+                redirect_uri: 'https://swe.umbc.edu/login.php'
+
+            }).then(function () {
+                var GoogleAuth = gapi.auth2.getAuthInstance();
+                GoogleAuth.signIn().then(function (googleUser) {
+                    onSignIn(googleUser);
+                }, function(error) {
+                    console.log('Error during sign in: ' + error.error);
+                });
+            }, function(error) {
+                console.log('Error initializing the Google API client: ' + error.error);
+            });
+        });
+    }
+
+    // Retrieve User Google Info
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    }
+</script>
+</body>
+</html>
