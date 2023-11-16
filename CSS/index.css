@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+}
+
+#header, #main, #footer {
+    background-color: #f0f0f0;
+    margin: 10px;
+    padding: 15px;
+}
+
+#header {
+    background-color: #FFD700;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+#main {
+    display: flex;
+}
+
+.column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.column img {
+    width: 200; /* Make sure images take up 100% of their container width */
+    height: 200; /* Maintain the aspect ratio of the images */
+}
+
+#footer {
+    background-color: #FFD700;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
